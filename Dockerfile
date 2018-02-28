@@ -12,11 +12,11 @@ ENV LOG_LEVEL "stats"
 
 RUN apk add --update openldap openldap-back-mdb && \
     mkdir -p /run/openldap /var/lib/openldap/openldap-data && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && mkdir /arangodbldif
 
 COPY scripts/* /etc/openldap/
 COPY docker-entrypoint.sh /
-COPY ldif /ldif
+COPY arangodbldif/* /arangodbldif/
 
 EXPOSE 389
 EXPOSE 636

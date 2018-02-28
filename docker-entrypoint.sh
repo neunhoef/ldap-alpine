@@ -71,6 +71,16 @@ sed -i "s~%USER_EMAIL%~$USER_EMAIL~g" "$USER_CONF"
 slapadd -l "$ORG_CONF"
 slapadd -l "$USER_CONF"
 
+# add ArangoDB stuff
+for l in /arangodbldif/*; do
+  case "$l" in
+    *.ldif)  echo "ENTRYPOINT: adding $l";
+            slapadd -l $l
+            ;;
+    *)      echo "ENTRYPOINT: ignoring $l" ;;
+  esac
+done
+
 # add any scripts in ldif
 for l in /ldif/*; do
   case "$l" in

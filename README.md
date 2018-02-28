@@ -90,8 +90,8 @@ provide all three TLS environment variables.
 | VARIABLE | DESCRIPTION | EXAMPLE |
 | :------- | :---------- | :------ |
 | CA_FILE | PEM-format file containing certificates for the CA's that slapd will trust | /etc/ssl/certs/ca.pem |
-| KEY_FILE | The slapd server private key | /etc/ssl/certs/public.key |
-| CERT_FILE | The slapd server certificate | /etc/ssl/certs/public.crt |
+| KEY_FILE | The slapd server private key | /etc/ssl/certs/server.key |
+| CERT_FILE | The slapd server certificate | /etc/ssl/certs/server.pem |
 
 Note these variables inform the entrypoint script (executed on startup) where
 to find the SSL certificates inside the container. So the certificates must
@@ -100,10 +100,10 @@ also be mounted at runtime too, for example:
 ```
 docker run -v /my-certs:/etc/ssl/certs \
   -e CA_FILE /etc/ssl/certs/ca.pem \
-  -e KEY_FILE /etc/ssl/certs/public.key \
-  -e CERT_FILE /etc/ssl/certs/public.crt \
-  pgarrett/ldap-alpine
+  -e KEY_FILE /etc/ssl/certs/server.key \
+  -e CERT_FILE /etc/ssl/certs/server.pem \
+  neunhoef/ldap-alpine
 ```
 
 Where `/my-certs` on the host contains the three certificate files `ca.pem`,
-`public.key` and `public.crt`.
+`server.key` and `server.pem`.
