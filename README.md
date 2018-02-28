@@ -1,5 +1,9 @@
 # LDAP Alpine
 
+This is for ArangoDB testing purposes only. The LDAP server is preloaded
+with user data and dummy certificates. Other than that, the
+functionality is as advertised.
+
 The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral,
 industry standard application protocol for accessing and maintaining
 distributed directory information services over an Internet Protocol (IP)

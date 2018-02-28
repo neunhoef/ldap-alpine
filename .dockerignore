@@ -2,3 +2,4 @@
 !docker-entrypoint.sh
 !scripts
 !arangodbldif
+!arangodbcerts
