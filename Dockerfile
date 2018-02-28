@@ -1,13 +1,13 @@
 FROM alpine
 
-ENV ORGANISATION_NAME "Example Ltd"
-ENV SUFFIX "dc=example,dc=com"
+ENV ORGANISATION_NAME "ArangoDB GmbH"
+ENV SUFFIX "dc=arangodb,dc=com"
 ENV ROOT_USER "admin"
 ENV ROOT_PW "password"
-ENV USER_UID "pgarrett"
-ENV USER_GIVEN_NAME "Phill"
-ENV USER_SURNAME "Garrett"
-ENV USER_EMAIL "pgarrett@example.com"
+ENV USER_UID "neunhoef"
+ENV USER_GIVEN_NAME "Max"
+ENV USER_SURNAME "Neunhoeffer"
+ENV USER_EMAIL "max@arangodb.com"
 ENV LOG_LEVEL "stats"
 
 RUN apk add --update openldap openldap-back-mdb && \
@@ -16,6 +16,7 @@ RUN apk add --update openldap openldap-back-mdb && \
 
 COPY scripts/* /etc/openldap/
 COPY docker-entrypoint.sh /
+COPY ldif /ldif
 
 EXPOSE 389
 EXPOSE 636

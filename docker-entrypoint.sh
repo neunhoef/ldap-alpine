@@ -83,7 +83,7 @@ done
 
 if [ "$LDAPS" = true ]; then
   echo "Starting LDAPS"
-  slapd -d "$LOG_LEVEL" -h "ldaps:///"
+  slapd -d "$LOG_LEVEL" -h "ldap:/// ldaps:///"
 else
   echo "Starting LDAP"
   slapd -d "$LOG_LEVEL" -h "ldap:///"
