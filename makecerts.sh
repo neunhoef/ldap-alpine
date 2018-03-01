@@ -12,8 +12,8 @@ openssl req -new -key ca.key -x509 -days 1095 -subj "/C=DE/ST=NRW/L=Cologne/O=Ar
 
 # Create a certificate signing request for the server and client certificates:
 
-openssl req -new -key server.key -subj "/C=DE/ST=NRW/L=Cologne/O=ArangoDB GmbH/OU=Clifton/CN=192.168.173.165/emailAddress=max@arangodb.com/" -out server.csr
-openssl req -new -key client.key -subj "/C=DE/ST=NRW/L=Cologne/O=ArangoDB GmbH/OU=Clifton/CN=192.168.173.165/emailAddress=max@arangodb.com/" -out client.csr
+openssl req -new -key server.key -subj "/C=DE/ST=NRW/L=Cologne/O=ArangoDB GmbH/OU=Clifton/CN=c1.arangodb.biz/emailAddress=max@arangodb.com/" -out server.csr
+openssl req -new -key client.key -subj "/C=DE/ST=NRW/L=Cologne/O=ArangoDB GmbH/OU=Clifton/CN=c1.arangodb.biz/emailAddress=max@arangodb.com/" -out client.csr
 
 # Sign the certificate signing requests to get x509 certificates for both:
 
