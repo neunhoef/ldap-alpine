@@ -6,22 +6,6 @@
 # requesting: ALL
 #
 
-# arangodb.com
-dn: dc=arangodb,dc=com
-objectClass: top
-objectClass: dcObject
-objectClass: organization
-o: ArangoDB GmbH
-dc: arangodb
-
-# admin, arangodb.com
-dn: cn=admin,dc=arangodb,dc=com
-objectClass: simpleSecurityObject
-objectClass: organizationalRole
-cn: admin
-description: LDAP administrator
-userPassword:: e1NTSEF9bHVsdVgvUXdKN2lLNzZUWkJPWUxoSVVUVVlKWld2NDM=
-
 # user1, arangodb.com
 dn: uid=user1,dc=arangodb,dc=com
 uid: user1
