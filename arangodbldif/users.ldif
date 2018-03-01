@@ -1,4 +1,28 @@
-# user1, arangodb.com, with role1
+# extended LDIF
+#
+# LDAPv3
+# base <dc=arangodb,dc=com> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# arangodb.com
+dn: dc=arangodb,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: ArangoDB GmbH
+dc: arangodb
+
+# admin, arangodb.com
+dn: cn=admin,dc=arangodb,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e1NTSEF9bHVsdVgvUXdKN2lLNzZUWkJPWUxoSVVUVVlKWld2NDM=
+
+# user1, arangodb.com
 dn: uid=user1,dc=arangodb,dc=com
 uid: user1
 objectClass: inetOrgPerson
@@ -358,3 +382,242 @@ sn: UnitTest_none_none_none
 description: ArangoDB test user
 userPassword:: e1NTSEF9dnVkQTU3Y3VEY0kxa1I5YndINHMxWGdZb3hrbU9RQ2c=
 
+# user1, arangodb.com
+dn: cn=user1,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=user1,dc=arangodb,dc=com
+cn: User1
+description: user role
+
+# adminrole, arangodb.com
+dn: cn=adminrole,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=arangoadmin,dc=arangodb,dc=com
+uniqueMember: uid=root,dc=arangodb,dc=com
+cn: adminrole
+description: ArangoDB admin user role
+
+# UnitTest_rw_rw_rw, arangodb.com
+dn: cn=UnitTest_rw_rw_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_rw_rw,dc=arangodb,dc=com
+cn: UnitTest_rw_rw_rw
+description: ArangoDB test user role
+
+# UnitTest_rw_rw_ro, arangodb.com
+dn: cn=UnitTest_rw_rw_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_rw_ro,dc=arangodb,dc=com
+cn: UnitTest_rw_rw_ro
+description: ArangoDB test user role
+
+# UnitTest_rw_rw_none, arangodb.com
+dn: cn=UnitTest_rw_rw_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_rw_none,dc=arangodb,dc=com
+cn: UnitTest_rw_rw_none
+description: ArangoDB test user role
+
+# UnitTest_rw_ro_rw, arangodb.com
+dn: cn=UnitTest_rw_ro_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_ro_rw,dc=arangodb,dc=com
+cn: UnitTest_rw_ro_rw
+description: ArangoDB test user role
+
+# UnitTest_rw_ro_ro, arangodb.com
+dn: cn=UnitTest_rw_ro_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_ro_ro,dc=arangodb,dc=com
+cn: UnitTest_rw_ro_ro
+description: ArangoDB test user role
+
+# UnitTest_rw_ro_none, arangodb.com
+dn: cn=UnitTest_rw_ro_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_ro_none,dc=arangodb,dc=com
+cn: UnitTest_rw_ro_none
+description: ArangoDB test user role
+
+# UnitTest_rw_none_rw, arangodb.com
+dn: cn=UnitTest_rw_none_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_none_rw,dc=arangodb,dc=com
+cn: UnitTest_rw_none_rw
+description: ArangoDB test user role
+
+# UnitTest_rw_none_ro, arangodb.com
+dn: cn=UnitTest_rw_none_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_none_ro,dc=arangodb,dc=com
+cn: UnitTest_rw_none_ro
+description: ArangoDB test user role
+
+# UnitTest_rw_none_none, arangodb.com
+dn: cn=UnitTest_rw_none_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_rw_none_none,dc=arangodb,dc=com
+cn: UnitTest_rw_none_none
+description: ArangoDB test user role
+
+# UnitTest_ro_rw_rw, arangodb.com
+dn: cn=UnitTest_ro_rw_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_rw_rw,dc=arangodb,dc=com
+cn: UnitTest_ro_rw_rw
+description: ArangoDB test user role
+
+# UnitTest_ro_rw_ro, arangodb.com
+dn: cn=UnitTest_ro_rw_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_rw_ro,dc=arangodb,dc=com
+cn: UnitTest_ro_rw_ro
+description: ArangoDB test user role
+
+# UnitTest_ro_rw_none, arangodb.com
+dn: cn=UnitTest_ro_rw_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_rw_none,dc=arangodb,dc=com
+cn: UnitTest_ro_rw_none
+description: ArangoDB test user role
+
+# UnitTest_ro_ro_rw, arangodb.com
+dn: cn=UnitTest_ro_ro_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_ro_rw,dc=arangodb,dc=com
+cn: UnitTest_ro_ro_rw
+description: ArangoDB test user role
+
+# UnitTest_ro_ro_ro, arangodb.com
+dn: cn=UnitTest_ro_ro_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_ro_ro,dc=arangodb,dc=com
+cn: UnitTest_ro_ro_ro
+description: ArangoDB test user role
+
+# UnitTest_ro_ro_none, arangodb.com
+dn: cn=UnitTest_ro_ro_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_ro_none,dc=arangodb,dc=com
+cn: UnitTest_ro_ro_none
+description: ArangoDB test user role
+
+# UnitTest_ro_none_rw, arangodb.com
+dn: cn=UnitTest_ro_none_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_none_rw,dc=arangodb,dc=com
+cn: UnitTest_ro_none_rw
+description: ArangoDB test user role
+
+# UnitTest_ro_none_ro, arangodb.com
+dn: cn=UnitTest_ro_none_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_none_ro,dc=arangodb,dc=com
+cn: UnitTest_ro_none_ro
+description: ArangoDB test user role
+
+# UnitTest_ro_none_none, arangodb.com
+dn: cn=UnitTest_ro_none_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_ro_none_none,dc=arangodb,dc=com
+cn: UnitTest_ro_none_none
+description: ArangoDB test user role
+
+# UnitTest_none_rw_rw, arangodb.com
+dn: cn=UnitTest_none_rw_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_rw_rw,dc=arangodb,dc=com
+cn: UnitTest_none_rw_rw
+description: ArangoDB test user role
+
+# UnitTest_none_rw_ro, arangodb.com
+dn: cn=UnitTest_none_rw_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_rw_ro,dc=arangodb,dc=com
+cn: UnitTest_none_rw_ro
+description: ArangoDB test user role
+
+# UnitTest_none_rw_none, arangodb.com
+dn: cn=UnitTest_none_rw_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_rw_none,dc=arangodb,dc=com
+cn: UnitTest_none_rw_none
+description: ArangoDB test user role
+
+# UnitTest_none_ro_rw, arangodb.com
+dn: cn=UnitTest_none_ro_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_ro_rw,dc=arangodb,dc=com
+cn: UnitTest_none_ro_rw
+description: ArangoDB test user role
+
+# UnitTest_none_ro_ro, arangodb.com
+dn: cn=UnitTest_none_ro_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_ro_ro,dc=arangodb,dc=com
+cn: UnitTest_none_ro_ro
+description: ArangoDB test user role
+
+# UnitTest_none_ro_none, arangodb.com
+dn: cn=UnitTest_none_ro_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_ro_none,dc=arangodb,dc=com
+cn: UnitTest_none_ro_none
+description: ArangoDB test user role
+
+# UnitTest_none_none_rw, arangodb.com
+dn: cn=UnitTest_none_none_rw,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_none_rw,dc=arangodb,dc=com
+cn: UnitTest_none_none_rw
+description: ArangoDB test user role
+
+# UnitTest_none_none_ro, arangodb.com
+dn: cn=UnitTest_none_none_ro,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_none_ro,dc=arangodb,dc=com
+cn: UnitTest_none_none_ro
+description: ArangoDB test user role
+
+# UnitTest_none_none_none, arangodb.com
+dn: cn=UnitTest_none_none_none,dc=arangodb,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=UnitTest_none_none_none,dc=arangodb,dc=com
+cn: UnitTest_none_none_none
+description: ArangoDB test user role
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 62
+# numEntries: 61
