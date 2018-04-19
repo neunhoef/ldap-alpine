@@ -599,9 +599,3 @@ uniqueMember: uid=UnitTest_none_none_none,dc=arangodb,dc=com
 cn: UnitTest_none_none_none
 description: ArangoDB test user role
 
-# search result
-search: 2
-result: 0 Success
-
-# numResponses: 62
-# numEntries: 61
