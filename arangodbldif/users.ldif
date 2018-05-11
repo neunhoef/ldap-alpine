@@ -30,6 +30,30 @@ sn: adminrole
 description: ArangoDB admin user
 userPassword:: e1NTSEF9dnVkQTU3Y3VEY0kxa1I5YndINHMxWGdZb3hrbU9RQ2c=
 
+# The Donald, arangodb.com
+dn: uid=The Donald,dc=arangodb,dc=com
+uid: The Donald
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+objectClass: person
+cn: Arangoadmin
+sn: adminrole
+description: ArangoDB admin user
+userPassword:: e1NTSEF9dnVkQTU3Y3VEY0kxa1I5YndINHMxWGdZb3hrbU9RQ2c=
+
+# The Donald, arangodb.com
+dn: uid=Angela Merkel,dc=arangodb,dc=com
+uid: Angela Merkel
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+objectClass: person
+cn: Arangoadmin
+sn: bundeskanzlerin
+description: ArangoDB admin user
+userPassword:: e1NTSEF9dnVkQTU3Y3VEY0kxa1I5YndINHMxWGdZb3hrbU9RQ2c=
+
 # root, arangodb.com
 dn: uid=root,dc=arangodb,dc=com
 uid: root
